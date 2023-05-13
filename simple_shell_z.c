@@ -12,6 +12,8 @@ int main(void)
 	char *args[MAX_COMMAND_LENGTH];
 	char *token;
 	int status;
+	int i = 0;
+	pid_t pid = fork();
 
 	while (1)
 	{
@@ -24,8 +26,6 @@ int main(void)
 		}
 
 		/* Parse command into arguments */
-		int i = 0;
-
 		token = strtok(command, " \n");
 		while (token != NULL)
 		{
@@ -35,9 +35,7 @@ int main(void)
 		}
 		args[i] = NULL;
 
-		/* Execute command */
-		pid_t pid = fork();
-		
+		/* Execute command */		
 		if (pid == -1)
 		{
 			perror("fork");
