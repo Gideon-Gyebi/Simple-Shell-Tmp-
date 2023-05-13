@@ -9,7 +9,7 @@
 /**
  * main - Interactive shell doing the folllowing
  * print prompt, get command and execute.
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: 1 if interactive mode, 0 otherwise.
  */
 
 int main(void)
