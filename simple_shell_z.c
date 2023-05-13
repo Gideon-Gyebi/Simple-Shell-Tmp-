@@ -24,7 +24,7 @@ int main(void)
 		}
 
 		/* Parse command into arguments */
-		i = 0;
+		int i = 0;
 
 		token = strtok(command, " \n");
 		while (token != NULL)
@@ -36,7 +36,7 @@ int main(void)
 		args[i] = NULL;
 
 		/* Execute command */
-		pid = fork();
+		pit_t pid = fork();
 		
 		if (pid == -1)
 		{
