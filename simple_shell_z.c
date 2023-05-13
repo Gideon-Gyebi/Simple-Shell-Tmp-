@@ -7,10 +7,9 @@
 #define MAX_COMMAND_LENGTH 1024
 
 /**
- * Interactive shell
- * print promt
- * get command
- * execute
+ * main - Interactive shell doing the folllowing
+ * print prompt, get command and execute.
+ * Return - return 0.
  */
 
 int main(void)
