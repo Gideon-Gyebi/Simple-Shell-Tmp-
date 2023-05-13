@@ -18,7 +18,7 @@ int main(void)
 	char *args[MAX_COMMAND_LENGTH];
 	char *token;
 	int status;
-	
+
 	while (1)
 	{
 		printf("$ ");
@@ -30,23 +30,23 @@ int main(void)
 		}
 		/* Parse command into arguments */
 		int i = 0;
-		
+
 		token = strtok(command, " \n");
 		while (token != NULL)
 		{
 			args[i++] = token;
-			
+
 			token = strtok(NULL, " \n");
 		}
 		args[i] = NULL;
-		
+
 		/* Execute command */
 		pid_t pid = fork();
-		
+
 		if (pid == -1)
 		{
 			perror("fork");
-			
+
 			exit(EXIT_FAILURE);
 		} else if (pid == 0)
 		{
