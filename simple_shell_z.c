@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/wait.h>
-
-#define MAX_COMMAND_LENGTH 1024
+#include "shell.h"
 
 /**
  * main - Interactive shell doing the folllowing
