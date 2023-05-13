@@ -19,6 +19,7 @@ int main(void)
 	char *args[MAX_COMMAND_LENGTH];
 	char *token;
 	int status;
+	
 	while (1)
 	{
 		printf("$ ");
@@ -30,6 +31,7 @@ int main(void)
 		}
 		/* Parse command into arguments */
 		int i = 0;
+		
 		token = strtok(command, " \n");
 		while (token != NULL)
 		{
@@ -41,6 +43,7 @@ int main(void)
 		
 		/* Execute command */
 		pid_t pid = fork();
+		
 		if (pid == -1)
 		{
 			perror("fork");
@@ -52,12 +55,10 @@ int main(void)
 			execvp(args[0], args);
 			perror("execvp");
 			_exit(EXIT_FAILURE);
-		}
-		else
+		} else
 		{
 			/* Parent process */
 			waitpid(pid, &status, 0);
-
 		}
 	}
 	return (0);
