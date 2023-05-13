@@ -36,7 +36,7 @@ int main(void)
 		args[i] = NULL;
 
 		/* Execute command */
-		pit_t pid = fork();
+		pid_t pid = fork();
 		
 		if (pid == -1)
 		{
