@@ -22,9 +22,9 @@ int main(void)
 		{
 			break;
 		}
-		/* Parse command into arguments */
-		int i = 0;
 
+		int i = 0;
+		/* Parse command into arguments */
 		token = strtok(command, " \n");
 		while (token != NULL)
 		{
@@ -34,9 +34,9 @@ int main(void)
 		}
 		args[i] = NULL;
 
-		/* Execute command */
-		pid_t pid = fork();
 
+		pid_t pid = fork();
+		/* Execute command */
 		if (pid == -1)
 		{
 			perror("fork");
